@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pi-library
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pi-library
+  template:
+    metadata:
+      labels:
+        app: pi-library
+    spec:
+      containers:
+      - name: pi-library
+        image: your-docker-image:latest
+        ports:
+        - containerPort: 80
