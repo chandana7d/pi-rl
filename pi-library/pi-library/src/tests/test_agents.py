@@ -5,8 +5,6 @@ from pi.agents.actor_critic.a3c_agent import A3CAgent
 from pi.agents.actor_critic.sac_agent import SACAgent
 from torch.multiprocessing import Process, Pipe
 
-
-
 def test_a2c_agent():
     # Initialize parameters
     config = {
