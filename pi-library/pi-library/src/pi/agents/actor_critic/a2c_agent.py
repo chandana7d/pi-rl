@@ -61,35 +61,3 @@ class A2CAgent(BaseAgent):
 
         return loss.item()
 
-# Main function to initialize and run the agent
-def main():
-    config = {
-        "memory_size": 10000,
-        "learning_rate": 0.001,
-        "gamma": 0.99,
-        "batch_size": 32,
-        "value_loss_weight": 0.5,
-        "num_iterations": 100,
-        "num_processes": 2,
-        "log_dir": "./logs"
-    }
-
-    state_size = 4  # Example state size
-    action_size = 2  # Example action size
-
-    # Initialize the agent
-    agent = A2CAgent(state_size=state_size, action_size=action_size, config=config)
-    print("A2C Agent initialized successfully!")
-
-    # Example of running training (dummy input for demonstration purposes)
-    states = torch.randn(5, state_size)  # 5 dummy states
-    actions = torch.randint(0, action_size, (5,))  # 5 dummy actions
-    rewards = torch.randn(5)  # 5 dummy rewards
-
-    # Train the agent and print the loss
-    loss = agent.train(states, actions, rewards)
-    print(f"Training loss: {loss}")
-
-# Ensure the main function runs only when executed directly
-if __name__ == "__main__":
-    main()
